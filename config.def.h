@@ -19,7 +19,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -29,8 +29,8 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	//{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	//{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
-	{ "Audacious",   NULL,       NULL,      1 << 8,       0,           -1 },
-	{ "Thunderbird", NULL,       NULL,      1 << 8,       0,           -1 }
+	{ "Audacious",   NULL,       NULL,      1 << 12,       0,           -1 },
+	{ "Thunderbird", NULL,       NULL,      1 << 11,       0,           -1 }
 };
 
 /* layout(s) */
@@ -97,6 +97,8 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	TAGKEYS(                        XK_0,                      9)
 	TAGKEYS(                        XK_minus,                  10)
+	TAGKEYS(                        XK_z,                      11)
+	TAGKEYS(                        XK_a,                      12)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
