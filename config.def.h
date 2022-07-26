@@ -29,6 +29,7 @@ static const Rule rules[] = {
 	/* class        instance    title         tags mask     isfloating   monitor */
 	{ "Audacious",   NULL,       NULL,        1 << 12,      0,           -1 },
 	{ "Thunderbird", NULL,       NULL,        1 << 11,      0,           -1 },
+	{ NULL,          NULL,       "dotfiles",  1 << 9,       0,           -1 },
 	{ NULL,          NULL,       "notes",     1 << 9,       0,           -1 },
 	{ NULL,          NULL,       "logs",      1 << 9,       0,           -1 },
 	{ NULL,          NULL,       "devxi-1",   1,            0,           -1 },
