@@ -19,7 +19,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "", "" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "'", ";", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -27,13 +27,11 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class        instance    title         tags mask     isfloating   monitor */
-	{ "Audacious",   NULL,       NULL,        1 << 12,      0,           -1 },
-	{ "Thunderbird", NULL,       NULL,        1 << 11,      0,           -1 },
 	{ NULL,          NULL,       "dotfiles",  1 << 9,       0,           -1 },
 	{ NULL,          NULL,       "notes",     1 << 9,       0,           -1 },
-	{ NULL,          NULL,       "logs",      1 << 9,       0,           -1 },
-	{ NULL,          NULL,       "devxi-1",   1,            0,           -1 },
-	{ NULL,          NULL,       "devxi-2",   1 << 1,       0,           -1 }
+	{ NULL,          NULL,       "logs",      1 << 10,      0,           -1 },
+	{ "Thunderbird", NULL,       NULL,        1 << 13,      0,           -1 },
+	{ "Audacious",   NULL,       NULL,        1 << 14,      0,           -1 }
 };
 
 /* layout(s) */
@@ -104,8 +102,10 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	TAGKEYS(                        XK_0,                      9)
 	TAGKEYS(                        XK_minus,                  10)
-	TAGKEYS(                        XK_z,                      11)
-	TAGKEYS(                        XK_a,                      12)
+	TAGKEYS(                        XK_apostrophe,             11)
+	TAGKEYS(                        XK_semicolon,              12)
+	TAGKEYS(                        XK_z,                      13)
+	TAGKEYS(                        XK_a,                      14)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
