@@ -7,11 +7,11 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=10", "JoyPixels:pixelsize=10:antialias=true:autohint=true" };
 static const char dmenufont[]       = "monospace:size=10";
-static const char col_gray1[]       = "#2e3440";  /* */
+static const char col_gray1[]       = "#2e3440";  /* bg */
 static const char col_gray2[]       = "#444444";  /* */
-static const char col_gray3[]       = "#7b8396";  /* BG font */
-static const char col_gray4[]       = "#eeeeee";  /* FG font */
-static const char col_cyan[]        = "#526884";  /* FG */
+static const char col_gray3[]       = "#7b8396";  /* bg font */
+static const char col_gray4[]       = "#eeeeee";  /* fg font */
+static const char col_cyan[]        = "#526884";  /* fg */
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -30,7 +30,8 @@ static const Rule rules[] = {
 	{ NULL,          NULL,       "dotfiles",  1 << 9,       0,           -1 },
 	{ NULL,          NULL,       "notes",     1 << 9,       0,           -1 },
 	{ NULL,          NULL,       "logs",      1 << 10,      0,           -1 },
-	{ "Thunderbird", NULL,       NULL,        1 << 13,      0,           -1 },
+	{ NULL,          NULL,       "project",   1 << 11,      0,           -1 },
+	{ "thunderbird", NULL,       NULL,        1 << 13,      0,           -1 },
 	{ "Audacious",   NULL,       NULL,        1 << 14,      0,           -1 }
 };
 
@@ -85,8 +86,6 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_c,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,                       XK_v,      setlayout,      {.v = &layouts[4]} },
-	{ MODKEY,                       XK_equal,  view,           {.ui = ~0 } },
-	{ MODKEY|ShiftMask,             XK_equal,  tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
